@@ -3,6 +3,7 @@
 # Déclarez sous cette ligne les images, avec l'instruction 'image'
 image code = "code.png"
 image cafe = "cafe.png"
+image b = "backrooms1.png"
 
 # Déclarez les personnages utilisés dans le jeu.
 define pp = Character("[nom_du_perso]", color="ffc8c8")
@@ -52,24 +53,35 @@ label start:
     na "vous buvez votre café"
     na "vous vous sentez mieux"
     na "vous vous sentez plus en forme"
-    na "Soudin le tournis vous prend""
+    na "Soudin le tournis vous prend"
     na "Vous vous sentez mal"
-
+    
     scene black
+
+    jump black
+
+    label black :
     na "Vous vous reveillez"
     H "HURLEMENT"
     na "Vous entendez un hurlement"
+    jump backrooms
+
+    label backrooms :
+    scene b
     na "Vous vous retournez"
-    na "Vous voyez une femme, avec un visage déformé, et des yeux rouges"
-    na "Elle vous regarde, et vous sourit"
-    na "Elle vous dit"
-    na "Je suis la reine des backrooms"
+    pp "Qu'est ce que c'est que ce bordel ?"
+    pp "Je suis dans les backrooms ?"
+    pp "C'est pas une connerie de creepypasta a la con se truc ?"
 
+    H "HURLEMENT"
+    H "AIDEZ MOI"
 
-
-
-        
-
+    menu
+        "Que faire ?"
+        "Je vais l'aider":
+            jump aide
+        "Je vais l'ignorer":
+            jump ignore
 
     
     return
