@@ -83,5 +83,34 @@ label start:
         "Je vais l'ignorer":
             jump ignore
 
-    
+    label aide :
+    scene b
+    na "Vous vous dirigez vers le hurlement"
+    na "Vous voyez une porte"
+    na "Vous vous approchez de la porte"
+    na "Vous remarquez la presence de sang sur la porte"
+
+    menu
+    scene black
+        "Que faire ?"
+        "J'ouvre la porte":
+            jump ouvre
+        "Je reste ici":
+            jump reste
+
+
+    label ignore :
+    na "Vous preverez fuire dans la direction opposé"
+
+    scene b
+
+
+    label goodending :
+    na "Vous vous reveillez"
+    na "Vous vous sentez bien"
+    na "Vous vous sentez en forme"
+    na "Vous vous sentez en bonne santé"
+
+
+
     return
