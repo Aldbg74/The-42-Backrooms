@@ -10,6 +10,7 @@ image matrice = "matrice.png"
 define pp = Character("[nom_du_perso]", color="ffc8c8")
 define na = Character('Narator', color="#ffc8c8")
 define H = Character('???', color="#FF0000")
+define I = Character('Ines', color="#00FF00")
 
 
 # Le jeu commence ici
@@ -117,10 +118,10 @@ label start:
     scene black
     na "vous approchez"
     pp "Qu'est ce que tu veux ?"
-    ?? "Je veux sortir"
-    ?? "Je veux sortir de ces backrooms"
+    H "Je veux sortir"
+    H "Je veux sortir de ces backrooms"
     pp "tu veux sortir ?"
-    ?? "Oui"
+    H "Oui"
 
     menu :
         "Que faire ?"
@@ -136,6 +137,27 @@ label start:
     return
 
     label freindship :
+    scene black
+    pp "Je vais t'aider"
+    H "Merci"
+    H "Merci beaucoup"
+    pp "De rien"
+    na "C'est une jolie fille, 1m70, cheveux noir bouclés, yeux bleus"
+    na "Elle est habillée d'une robe noire"
+    na "Elle a l'air d'avoir 20 ans"
+    pp "Je m'appelle [nom_du_perso]"
+    H "Je m'appelle Ines"
+    na "Vous vous êtes présenté"
+    na "Vous avez fait connaissance"
+    na "Vous avez décidé de vous aider"
+
+    I "tu sait comment on sort de ces backrooms ?"
+    pp "Non"
+    I "Moi non plus"
+    I "Mais je vais essayer de trouver une solution"
+    I "Je vais essayer de trouver un moyen de sortir"
+    
+
 
 
 
