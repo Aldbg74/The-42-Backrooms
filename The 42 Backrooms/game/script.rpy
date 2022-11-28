@@ -162,7 +162,21 @@ label start:
     pp "Je suis arrivé ici en prenant un café"
     I "Moi aussi"
     pp "Le café est peut etre la solution"
-    
+    I "Un café magique ?"
+    pp "rire"
+
+    H "hurrlement"
+    na "Vous entendez un hurlement"
+    na "Vous vous retournez"
+    na "Vous voyez une porte"
+
+    I "C'est moi ou cette porte m'etait pas la avant ?"
+    pp "Non ce n'est pas toi"
+    pp "la porte vient d'apparaitre"
+    I "damm shit"
+
+    #ON CONTINUE LHISTOIRE ICI BOGOSS
+
 
 
 
@@ -256,6 +270,22 @@ label start:
     pp "Survivre au backrooms pour se faire blackhole"
     pp "C'est pas un peu con ?"
     return
+
+    label goodendingInes :
+    scene black
+    pp "Vous vous reveillez"
+    pp "Ines vous regarde"
+    pp "Elle vous sourit"
+    pp "Vous vous sentez bien"
+    pp "Vous vous approchez d'elle"
+    pp "vos levres se touchent"
+    pp "Vous vous embrassez"
+    I "Je t'aime"
+    pp "Je t'aime aussi"
+
+    na "Bonne fin"
+    return
+
 
 
 
