@@ -156,7 +156,14 @@ label start:
     I "Moi non plus"
     I "Mais je vais essayer de trouver une solution"
     I "Je vais essayer de trouver un moyen de sortir"
+    pp "Tu as une idée ?"
+    I "peut etre"
+    I "Il faut en premier lieu trouver comment on est arrivé ici"
+    pp "Je suis arrivé ici en prenant un café"
+    I "Moi aussi"
+    pp "Le café est peut etre la solution"
     
+
 
 
 
