@@ -4,6 +4,7 @@
 image code = "code.png"
 image cafe = "cafe.png"
 image b = "backrooms1.png"
+image matrice = "matrice.png"
 
 # Déclarez les personnages utilisés dans le jeu.
 define pp = Character("[nom_du_perso]", color="ffc8c8")
@@ -76,7 +77,7 @@ label start:
     H "HURLEMENT"
     H "AIDEZ MOI"
 
-    menu
+    menu:
         "Que faire ?"
         "Je vais l'aider":
             jump aide
@@ -90,26 +91,142 @@ label start:
     na "Vous vous approchez de la porte"
     na "Vous remarquez la presence de sang sur la porte"
 
-    menu
-    scene black
-        "Que faire ?"
+    menu :
         "J'ouvre la porte":
             jump ouvre
-        "Je reste ici":
-            jump reste
+        "Je fuis":
+            jump ignore
+
+    label ouvre :
+    na "Vous ouvrez la porte"
+    scene black
+    na "La piece est plongée dans le noir"
+    na "Vous entendez un bruit"
+    ?? "HURLEMENT"
+    ?? "Je suis la"
+    ?? "[nom_du_perso] = aide moi"
+
+    menu
+        "Que faire ?"
+        "Je vais l'aider":
+            jump help
+        "Je vais l'ignorer":
+            jump ignore
+
+    label help :
+    scene black
+    na "vous approchez"
+    pp "Qu'est ce que tu veux ?"
+    ?? "Je veux sortir"
+    ?? "Je veux sortir de ces backrooms"
+    pp "tu veux sortir ?"
+    ?? "Oui"
+
+    menu :
+        "Que faire ?"
+        "Je vais l'aider":
+            jump freindship
+        "Je vais l'aider contre un petit service ;)":
+            jump pervers
+
+    label pervers :
+    scene black
+    na "Attends"
+    na "Je vais te rendre un petit service"
+    return
+
+    label freindship :
+
 
 
     label ignore :
     na "Vous preverez fuire dans la direction opposé"
+    scene black
+    na "soudin la lumiere s'eteint"
+    na "vous entendez le bruit d'une respirations"
+    na "une respiration lente"
+    na "qui s'approche"
 
+    #Menu pour le fin de jeu "Sacrifice"
+    
+    menu :
+        "Que faire ?"
+        "Rester immobile":
+            jump imo
+        "Courir le plus vite et loin possible":
+            jump Courir
+
+    label Courir
+    na "Vous courrez le plus vite possible"
+    scene backrooms1
+    na "vous etes de retour au point de départ"
+    na "Vous devenez fou"
+    na "vous n'etes plus capable de vous controler"
+    na "vous vous mettez a courir dans les couloirs"
+    na "vous frappez les murs"
+    na "Vous etes devenu fou"
+    pp "HOUEUUUEUUU"
+    pp "I STILL ALIIIIVEEEEEEEEEE"
+    pp "Yhoueuseh"
+    return
+
+    # Troll de fin de jeu "Sacrifice matrice"
+    label imo :
+    na "Vous restez immobile"
+    na "la respiration se fait de plus en plus proche"
+    na "Vous sentez le souffle de l'entité sur votre visage"
+    na "Vous sentez une main sur votre épaule"
+    na "Felicitations vous avez perdu"
+    na "Vous avez perdu contre les backrooms"
+    na "L'entité vous a attrapé"
+    na "Vous avez perdu"
+    na "Vous avez perdu"
+    na "Vous avez perdu"
+    na "Vous avez perdu"
+    na "Vous avez perdu"
+    na "Vous avez perdu"
+    na "Vous avez perdu"
+    na "Vous avez perdu"
+    na "Vous avez perdu"
+
+    # Fin du jeu : on revient au menu principal.
+    menu :
+        "Resister":
+            jump resistance
+        "Accepter":
+            jump accepte
+
+    label resistance :
+    na "Vous vous reveillez"
     scene b
+    na "vous etes toujours dans les backrooms"
+    H "Bonjour [nom_du_perso] !"
+    H "Je suis l'entité des backrooms"
+    H "Vous avez battu mon jeu"
+    scene matrice
+    H "Vous avez battu la matrice"
+    H "Vous faites parti des rares humains a avoir reussi"
+    H "Vous avez gagné"
+    H "Je vous renvoie chez vous [nom_du_perso]"
+    H "Peut etre nous reverrons nous un jour"
+    jump goodending
 
-
+    label accepte :
+    return
+        
     label goodending :
+    scene black
     na "Vous vous reveillez"
     na "Vous vous sentez bien"
     na "Vous vous sentez en forme"
     na "Vous vous sentez en bonne santé"
+    na "Vous levez vos yeux"
+    scene code
+    pp "Merde..."
+    pp "Je suis toujours dans mon code"
+    pp "Survivre au backrooms pour se faire blackhole"
+    pp "C'est pas un peu con ?"
+    return
 
 
 

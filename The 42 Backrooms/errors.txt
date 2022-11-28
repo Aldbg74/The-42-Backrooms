@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 10: expected 'word' not found.
-    define ?? = Character('???', color="#FF0000")
-           ^
-
-File "game/script.rpy", line 51: expected statement.
-    ?? "HURLEMENT"
+File "game/script.rpy", line 32: expected menuitem
+    if [nom_du_perso] = Alexis
     ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sat Nov 26 19:45:11 2022
+Mon Nov 28 18:39:01 2022
