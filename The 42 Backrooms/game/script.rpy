@@ -7,6 +7,7 @@ image b = "backrooms1.png"
 image matrice = "matrice.png"
 image bdoor = "backroomdoor.png"
 image b2 = "backroom3.png"
+image b3 = "creepyroom.png"
 
 # Déclarez les personnages utilisés dans le jeu.
 define pp = Character("[nom_du_perso]", color="ffc8c8")
@@ -17,7 +18,6 @@ define I = Character( "[nom_du_persosecondaire]", color="#00FF00")
 
 # Le jeu commence ici
 label start:
-    play music "NLIFE.MP3"
     "Comment vous appelez-vous ?"
     $ nom_du_perso = renpy.input("Entrez un nom.")
     "Vous vous appelez [nom_du_perso] !"
@@ -61,8 +61,6 @@ label start:
     na "Vous vous sentez mal"
     
     scene black
-    stop sound  
-
     jump black
 
     label black :
@@ -216,7 +214,75 @@ label start:
     I "On va trouver une solution"
     pp "Oui, on va trouver une solution"
 
+    menu :
+        "Que faire ?"
+        "On va continuer a marcher":
+            jump marche
+        "Et si on essayait de faire demi tour ?":
+            jump demitour
 
+    label demitour:
+    na "Vous vous retournez"
+    na "Vous marchez dans la direction opposée"
+    na "Etrangement, le decort change"
+    I "Le decort change on dirait"
+    pp "Oui, on dirait que l'on est dans un autre couloir"
+    scene b3
+    na "Vous arrivez dans une piece"
+    na "On dirait une salle de torture"
+    na "[nom_du_persosecondaire] vous prend la main"
+
+    menu :
+        "Que faire ?"
+        "Garder vos distances":
+            $ distance = "oui"
+            jump GDISTANCE
+        "Laisser [nom_du_persosecondaire] vous prendre la main":
+            $ distance = "non"
+            jump gmain
+
+    label GDISTANCE :
+    na "vous faite en sorte de garder vos distances"
+    na "Vous ne preferez pas avoir la main de [nom_du_persosecondaire] dans la votre"
+    jump suite1
+
+
+    label GMAIN :
+    na "Vous laissez [nom_du_persosecondaire] vous prendre la main"
+    na "Cette sensation est agréable"
+    jump suite1
+
+    label suite1 :
+    na "Vous marchez dans la piece en evitant les objets"
+    I "Dans notre malheur on a de la chance"
+    pp "Pourquoi ?"
+    I "Dans les jeux vidéo les backrooms sont habités par des monstres"
+    I "On a de la chance, il n'y a personne ici"
+    pp "Oui, on a de la chance effectivement on aurait pu tomber sur un monstre"
+    jump goodendingInes
+
+
+    label marcher :
+    na "Vous continuez a marcher"
+    na "Vous marchez pendant des heures"
+    na "Vous marchez pendant des jours"
+    na "Vous marchez pendant des semaines"
+    na "Vous marchez pendant des mois"
+    na "Vous marchez pendant des années"
+    na "Vous marchez pendant des décénies"
+    na "Vous marchez pendant des siècles"
+    na "Vous marchez pendant des millénaires"
+    na "Vous marchez pendant des milliards d'années"
+    na "Vous marchez pendant des milliards de milliards d'années"
+    na "Vous marchez pendant des milliards de milliards de milliards d'années"
+    na "Vous marchez pendant des milliards de milliards de milliards de milliards d'années"
+    na "Vous marchez pendant des milliards de milliards de milliards de milliards de milliards d'années"
+    na "Vous marchez pendant des milliards de milliards de milliards de milliards de milliards de milliards d'années"
+    na "Vous marchez pendant des milliards de milliards de milliards de milliards de milliards de milliards de milliards d'années"
+    na "Vous marchez pendant des milliards de milliards de milliards de milliards de milliards de milliards de milliards de milliards d'années"
+    na "Vous marchez pendant des milliards de milliards de milliards de milliards de milliards de milliards de milliards de milliards de milliards d'années"
+    na "Vous passerez donc le restant de votre existence a marcher dans ce couloir"
+    return
 
 
 
@@ -314,21 +380,27 @@ label start:
     return
 
     label goodendingInes :
-    scene black
-    pp "Vous vous reveillez"
-    pp "Ines vous regarde"
-    pp "Elle vous sourit"
-    pp "Vous vous sentez bien"
-    pp "Vous vous approchez d'elle"
-    pp "vos levres se touchent"
-    pp "Vous vous embrassez"
+   
+    if distance == "non"
+    na "Vous vous reveillez"
+    na "Ines vous regarde"
+    na "Elle vous sourit"
+    na "Vous vous sentez bien"
+    na "Vous vous approchez d'elle"
+    na "vos levres se touchent"
+    na "Vous vous embrassez"
     I "Je t'aime"
     pp "Je t'aime aussi"
 
-    na "Bonne fin"
+    na "Meilleure fin"
     return
 
+    if distance == "oui"
+    na "Vous vous reveillez"
+    na "Ines vous regarde"
+    na "Elle vous sourit"
+    I "On a gagné"
+    a "On a gagné"
 
-
-
+    na "Fin Moyenne"
     return
