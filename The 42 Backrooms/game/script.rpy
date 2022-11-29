@@ -5,12 +5,14 @@ image code = "code.png"
 image cafe = "cafe.png"
 image b = "backrooms1.png"
 image matrice = "matrice.png"
+image bdoor = "backroomdoor.png"
+image b2 = "backroom3.png"
 
 # Déclarez les personnages utilisés dans le jeu.
 define pp = Character("[nom_du_perso]", color="ffc8c8")
 define na = Character('Narator', color="#ffc8c8")
 define H = Character('???', color="#FF0000")
-define I = Character('Ines', color="#00FF00")
+define I = Character( "[nom_du_persosecondaire]", color="#00FF00")
 
 
 # Le jeu commence ici
@@ -89,6 +91,7 @@ label start:
     scene b
     na "Vous vous dirigez vers le hurlement"
     na "Vous voyez une porte"
+    scene bdoor
     na "Vous vous approchez de la porte"
     na "Vous remarquez la presence de sang sur la porte"
 
@@ -103,16 +106,30 @@ label start:
     scene black
     na "La piece est plongée dans le noir"
     na "Vous entendez un bruit"
-    ?? "HURLEMENT"
-    ?? "Je suis la"
-    ?? "[nom_du_perso] = aide moi"
+    H "HURLEMENT"
+    H "Je suis la"
+    H "[nom_du_perso] aide moi"
 
-    menu
+    menu :
         "Que faire ?"
         "Je vais l'aider":
             jump help
         "Je vais l'ignorer":
+            jump ignore1
+
+    label ignore1:
+    na "Vous vous retournez"
+    na "vous fuyez dans la direction opposée"
+    na "Vous vous sentez mal"
+    na "n'auriez vous pas fait une erreur ?"
+
+    menu:
+        "Que faire ?"
+        "Je retourne l'aider":
+            jump help
+        "Je ne peux pas l'aider":
             jump ignore
+
 
     label help :
     scene black
@@ -142,11 +159,10 @@ label start:
     H "Merci"
     H "Merci beaucoup"
     pp "De rien"
-    na "C'est une jolie fille, 1m70, cheveux noir bouclés, yeux bleus"
-    na "Elle est habillée d'une robe noire"
-    na "Elle a l'air d'avoir 20 ans"
+    na "Vous lui demandez son nom"
+    $ nom_du_persosecondaire = renpy.input("Entrez un nom.")
     pp "Je m'appelle [nom_du_perso]"
-    H "Je m'appelle Ines"
+    H "Je m'appelle [nom_du_persosecondaire]"
     na "Vous vous êtes présenté"
     na "Vous avez fait connaissance"
     na "Vous avez décidé de vous aider"
@@ -174,8 +190,33 @@ label start:
     pp "Non ce n'est pas toi"
     pp "la porte vient d'apparaitre"
     I "damm shit"
+    I "on va ouvrir ?"
+    pp "Oui, j'imagine que c'est la seule solution"
+    na "Vous ouvrez la porte"
+    scene b2
+    na "Vous entrez dans la piece"
+    na "La porte derriere vous disparait"
+    pp "On ne peut plus faire marche arriere maintenant"
+    I "On va ou ?"
+    pp"on dirait qu'il n'y a pas 500 chemins" 
+    pp "on va donc devoir le suivre"
+    I "Je peux te prendre la main ?"
+    pp "Oui, bien sur"
+    scene black
+    na "Vous vous prenez la main"
+    na "Vous marchez dans un long couloir"
+    na "Vous marchez pendant des heures"
+    na "Vous marchez pendant des jours"
 
-    #ON CONTINUE LHISTOIRE ICI BOGOSS
+    I "On est ou ?"
+    pp "Je ne sais pas, on dirait que l'on est toujours dans le meme couloir"
+    I "On est perdu"
+    pp "il doit y avoir une logique dans tout ça"
+    I "On va trouver une solution"
+    pp "Oui, on va trouver une solution"
+    
+
+
 
 
 
@@ -199,7 +240,7 @@ label start:
         "Courir le plus vite et loin possible":
             jump Courir
 
-    label Courir
+    label Courir :
     na "Vous courrez le plus vite possible"
     scene backrooms1
     na "vous etes de retour au point de départ"

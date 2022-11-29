@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 32: expected menuitem
-    if [nom_du_perso] = Alexis
-    ^
+The label ignore is defined twice, at File "game/script.rpy", line 120:
+    label ignore:
+and File "game/script.rpy", line 211:
+    label ignore :
+
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Nov 28 18:39:01 2022
+Tue Nov 29 10:21:26 2022
