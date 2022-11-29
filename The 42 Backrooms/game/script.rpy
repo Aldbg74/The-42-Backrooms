@@ -239,7 +239,7 @@ label start:
             jump GDISTANCE
         "Laisser [nom_du_persosecondaire] vous prendre la main":
             $ distance = "non"
-            jump gmain
+            jump GMAIN
 
     label GDISTANCE :
     na "vous faite en sorte de garder vos distances"
@@ -259,7 +259,43 @@ label start:
     I "Dans les jeux vidéo les backrooms sont habités par des monstres"
     I "On a de la chance, il n'y a personne ici"
     pp "Oui, on a de la chance effectivement on aurait pu tomber sur un monstre"
+    scene black
+    na "Une nouvelle piece sombre"
+    I "J'ai peur"
+    menu: 
+        "Que faire ?"
+        "Je vais le rassurer":
+            $ rassurer = "oui"
+            jump rassurer
+        "Je vais le laisser dans son coin":
+            $ rassurer = "non"
+            jump laisser
+
+    label rassurer :
+    na "Vous vous rapprochez de [nom_du_persosecondaire]"
+    na "Vous le rassurez en la prenant dans vos bras"
+    na "Vous le rassurez en lui disant que tout va bien"
+    I "Merci beaucoup [nom_du_perso]"
+    pp "De rien [nom_du_persosecondaire]"
+        if distance == "Non" :
+            na "[nom_du_persosecondaire] se tourne vers vous"
+            na "[nom_du_persosecondaire] vous embrasse"
+    na "Apres ces quelques minutes de calme"
+    na "la piece change d'elle meme"
+    na "Vous vous retrouvez dans une piece avec une machine a café"
+    I "On est dans une piece avec une machine a café"
+    pp "Oui, on est dans une piece avec une machine a café"
+    I "On va boire un café ?"
+    pp "Oui, on va boire un café"
+    na "Vous prenez un café"
+    na "Vous vous asseyez sur un canapé"
+    na "Vous vous sentez mieux"
     jump goodendingInes
+
+    label laisser :
+    na "Vous laissez [nom_du_persosecondaire] dans son coin"
+    na "Vous finissez par tomber sur une grande piece""
+
 
 
     label marcher :
@@ -283,11 +319,6 @@ label start:
     na "Vous marchez pendant des milliards de milliards de milliards de milliards de milliards de milliards de milliards de milliards de milliards d'années"
     na "Vous passerez donc le restant de votre existence a marcher dans ce couloir"
     return
-
-
-
-
-
 
 
     label ignore :
@@ -381,26 +412,38 @@ label start:
 
     label goodendingInes :
    
-    if distance == "non"
-    na "Vous vous reveillez"
-    na "Ines vous regarde"
-    na "Elle vous sourit"
-    na "Vous vous sentez bien"
-    na "Vous vous approchez d'elle"
-    na "vos levres se touchent"
-    na "Vous vous embrassez"
-    I "Je t'aime"
-    pp "Je t'aime aussi"
+        if distance == "non" :
+            if rassurer == "oui" :
+                na "Vous vous reveillez"
+                na "Ines vous regarde"
+                na "Elle vous sourit"
+                na "Vous vous sentez bien"
+                na "Vous vous approchez d'elle"
+                na "vos levres se touchent"
+                na "Vous vous embrassez"
+                I "Je t'aime [nom_du_perso]"
+                pp "Je t'aime aussi [nom_du_persosecondaire]"
+                na "Meilleure fin"
+                na ""
+                na ""
+                na ""
+                na ""
+                na ""
+                na ""
+                na ""
+                na ""
+                na ""
+                na "This is not the end"
+                na "This is just the begining"
+                H "Hurlement strident"
+                return
 
-    na "Meilleure fin"
-    return
-
-    if distance == "oui"
-    na "Vous vous reveillez"
-    na "Ines vous regarde"
-    na "Elle vous sourit"
-    I "On a gagné"
-    a "On a gagné"
-
-    na "Fin Moyenne"
-    return
+        if distance == "oui" :
+            if rassurer == "non" :
+                na "Vous vous reveillez"
+                na "Ines vous regarde"
+                na "Elle vous sourit"
+                I "On a gagné"
+                I "On a gagné"
+                na "Fin Moyenne"
+                return

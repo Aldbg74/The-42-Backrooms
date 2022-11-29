@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 386: expected ':' not found.
-    else 
-         ^
+File "game/script.rpy", line 408: if statement expects a non-empty block.
+    if distance == "non" :
+                          ^
+
+File "game/script.rpy", line 420: expected statement.
+    r   eturn
+             ^
+
+File "game/script.rpy", line 422: if statement expects a non-empty block.
+    if distance == "oui" :
+                          ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Nov 29 15:50:34 2022
+Tue Nov 29 17:04:31 2022

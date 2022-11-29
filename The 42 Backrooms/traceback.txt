@@ -1,26 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 241, in script
-    $ mainnon
-  File "game/script.rpy", line 241, in <module>
-    $ mainnon
-NameError: name 'mainnon' is not defined
+  File "game/script.rpy", line 220, in script
+    jump marche
+ScriptError: could not find label 'marche'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 241, in script
-    $ mainnon
-  File "/Users/alexisdrago/Desktop/renpy-8.0.3-sdk/renpy/ast.py", line 1131, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Users/alexisdrago/Desktop/renpy-8.0.3-sdk/renpy/python.py", line 1061, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 241, in <module>
-    $ mainnon
-NameError: name 'mainnon' is not defined
+  File "game/script.rpy", line 220, in script
+    jump marche
+  File "/Users/alexisdrago/Desktop/renpy-8.0.3-sdk/renpy/ast.py", line 1974, in execute
+    rv = renpy.game.script.lookup(target)
+  File "/Users/alexisdrago/Desktop/renpy-8.0.3-sdk/renpy/script.py", line 927, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'marche'.
 
 macOS-10.16-x86_64-i386-64bit x86_64
 Ren'Py 8.0.3.22090809
 The 42 Backrooms 1.0
-Tue Nov 29 15:55:39 2022
+Tue Nov 29 17:11:23 2022
