@@ -17,7 +17,7 @@ define I = Character( "[nom_du_persosecondaire]", color="#00FF00")
 
 # Le jeu commence ici
 label start:
-
+    play music "NLIFE.MP3"
     "Comment vous appelez-vous ?"
     $ nom_du_perso = renpy.input("Entrez un nom.")
     "Vous vous appelez [nom_du_perso] !"
@@ -61,6 +61,7 @@ label start:
     na "Vous vous sentez mal"
     
     scene black
+    stop sound  
 
     jump black
 
@@ -214,7 +215,7 @@ label start:
     pp "il doit y avoir une logique dans tout ça"
     I "On va trouver une solution"
     pp "Oui, on va trouver une solution"
-    
+
 
 
 
