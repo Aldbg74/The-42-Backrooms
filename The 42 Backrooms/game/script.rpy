@@ -294,7 +294,9 @@ label start:
 
     label laisser :
     na "Vous laissez [nom_du_persosecondaire] dans son coin"
-    na "Vous finissez par tomber sur une grande piece""
+    na "Vous finissez par tomber sur une grande piece"
+
+    #A FINIR LA JE SAIS PAS TROP QUOI METTRE
 
 
 
@@ -436,12 +438,13 @@ label start:
                 na "This is not the end"
                 na "This is just the begining"
                 H "Hurlement strident"
+                na "Sauvegarde Chacal"
                 return
 
         if distance == "oui" :
             if rassurer == "non" :
                 na "Vous vous reveillez"
-                na "Ines vous regarde"
+                na "[nom_du_persosecondaire] vous regarde"
                 na "Elle vous sourit"
                 I "On a gagné"
                 I "On a gagné"
