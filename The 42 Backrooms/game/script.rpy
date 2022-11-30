@@ -1,3 +1,16 @@
+#Section prise de notes
+#Il faudrait trouver un moyen pour que le joueur de puisse pas s'appeler "narator"
+#Il faudrait créer une ending speciale pour les joueurs qui ont le nom de Alexis
+#Il faudrait vraiment organiser ce merdier de code
+#Il faudrait vraiment trouver une banque d'image pour les scenes
+#Il faudrait vraiment augmenter le sénario et les choix du perso
+#Idealement il faudrait rajouter quelques "Monstres" pour rendre le jeu plus interessant
+#Rajouter des timed choices pour les "appaitions" des monstres
+
+#Attention vous lisez le scypt du jeu, vous avez donc acces au jeux et a de possibles spoilers
+#Vous pouvez aussi voir des truc qui devrait etre fait mais qui ne le sont pas encore
+
+
 # Vous pouvez placer le script de votre jeu dans ce fichier.
 
 # Déclarez sous cette ligne les images, avec l'instruction 'image'
@@ -20,6 +33,13 @@ define I = Character( "[nom_du_persosecondaire]", color="#00FF00")
 label start:
     "Comment vous appelez-vous ?"
     $ nom_du_perso = renpy.input("Entrez un nom.")
+
+    # tentative d'integration du fait que le joueur ne doit pas pouvoir entrer narator
+    #if [nom_du_perso] == "Narator":
+    #    "Vous ne pouvez pas vous appeler Narator."
+    #    jump start
+
+
     "Vous vous appelez [nom_du_perso] !"
     na "Bonjour, je suis le narrateur de ce jeu."
     na "Je vais vous raconter une histoire."
@@ -217,7 +237,7 @@ label start:
     menu :
         "Que faire ?"
         "On va continuer a marcher":
-            jump marche
+            jump marcher
         "Et si on essayait de faire demi tour ?":
             jump demitour
 
@@ -277,20 +297,25 @@ label start:
     na "Vous le rassurez en lui disant que tout va bien"
     I "Merci beaucoup [nom_du_perso]"
     pp "De rien [nom_du_persosecondaire]"
-        if distance == "Non" :
-            na "[nom_du_persosecondaire] se tourne vers vous"
-            na "[nom_du_persosecondaire] vous embrasse"
-    na "Apres ces quelques minutes de calme"
-    na "la piece change d'elle meme"
-    na "Vous vous retrouvez dans une piece avec une machine a café"
-    I "On est dans une piece avec une machine a café"
-    pp "Oui, on est dans une piece avec une machine a café"
-    I "On va boire un café ?"
-    pp "Oui, on va boire un café"
-    na "Vous prenez un café"
-    na "Vous vous asseyez sur un canapé"
-    na "Vous vous sentez mieux"
-    jump goodendingInes
+   
+    # Je ne sais pas comment faire marcher la fonction suivante
+    # if distance == "Non" :
+    #    na "[nom_du_persosecondaire] se tourne vers vous"
+    #    na "[nom_du_persosecondaire] vous embrasse"
+    
+    pp "On va continuer a marcher"
+    na "Vous continuez votre marche dans ces couloirs"
+    scene b
+    pp "On est de retour au départ"
+    I "Il y a quelque chose de bizarre"
+    I "On dirait un goblet de café, la par terre"
+    na "Effectivement, on semble appercevoir un goblet de café"
+    pp "Si on bois ce café, on pourra peut etre sortir de ces backrooms"
+    I "C'est une possibilité"
+    I "Ou alors on va mourir"
+
+    # Incrémenter la fin du jeu en la vertion actuel. 
+
 
     label laisser :
     na "Vous laissez [nom_du_persosecondaire] dans son coin"
@@ -450,3 +475,9 @@ label start:
                 I "On a gagné"
                 na "Fin Moyenne"
                 return
+
+
+# Créer a partir d'ici la suite du jeu
+# Retour dans les BCKRMS pour essayer de comprendre ce qui se passe
+# Nouveau personnage a sauver
+# Fin definitive avec destruction des backrooms de 42 ou echec des personnages principaux

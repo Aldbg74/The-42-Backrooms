@@ -1,22 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 220, in script
-    jump marche
-ScriptError: could not find label 'marche'.
+  File "game/script.rpy", line 41, in script
+    if [nom_du_perso] == Alexis:
+  File "game/script.rpy", line 41, in <module>
+    if [nom_du_perso] == Alexis:
+NameError: name 'Alexis' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 220, in script
-    jump marche
-  File "/Users/alexisdrago/Desktop/renpy-8.0.3-sdk/renpy/ast.py", line 1974, in execute
-    rv = renpy.game.script.lookup(target)
-  File "/Users/alexisdrago/Desktop/renpy-8.0.3-sdk/renpy/script.py", line 927, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'marche'.
+  File "game/script.rpy", line 41, in script
+    if [nom_du_perso] == Alexis:
+  File "/Users/alexisdrago/Desktop/renpy-8.0.3-sdk/renpy/ast.py", line 2115, in execute
+    if renpy.python.py_eval(condition):
+  File "/Users/alexisdrago/Desktop/renpy-8.0.3-sdk/renpy/python.py", line 1092, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "/Users/alexisdrago/Desktop/renpy-8.0.3-sdk/renpy/python.py", line 1085, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 41, in <module>
+    if [nom_du_perso] == Alexis:
+NameError: name 'Alexis' is not defined
 
 macOS-10.16-x86_64-i386-64bit x86_64
 Ren'Py 8.0.3.22090809
 The 42 Backrooms 1.0
-Tue Nov 29 17:11:23 2022
+Wed Nov 30 18:02:04 2022
