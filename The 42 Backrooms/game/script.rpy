@@ -21,6 +21,8 @@ image matrice = "matrice.png"
 image bdoor = "backroomdoor.png"
 image b2 = "backroom3.png"
 image b3 = "creepyroom.png"
+image 2cb = "cabine.png"
+image 2cour = "Foretcourse.png"
 
 # Déclarez les personnages utilisés dans le jeu.
 define pp = Character("[nom_du_perso]", color="ffc8c8")
@@ -313,9 +315,13 @@ label start:
     pp "Si on bois ce café, on pourra peut etre sortir de ces backrooms"
     I "C'est une possibilité"
     I "Ou alors on va mourir"
-
-    # Incrémenter la fin du jeu en la vertion actuel. 
-
+    pp "On va mourir quoi qu'il arrive"
+    I "Oui, c'est vrai"
+    pp "On va donc boire ce café"
+    I "On va boire ce café"
+    na "Vous prenez le café"
+    na "Vous le buvez"
+    jump goodendingInes
 
     label laisser :
     na "Vous laissez [nom_du_persosecondaire] dans son coin"
@@ -443,6 +449,7 @@ label start:
    
         if distance == "non" :
             if rassurer == "oui" :
+                scene black
                 na "Vous vous reveillez"
                 na "Ines vous regarde"
                 na "Elle vous sourit"
@@ -466,10 +473,12 @@ label start:
                 na "This is just the begining"
                 H "Hurlement strident"
                 na "Sauvegarde Chacal"
-                jump p2-revel
+                na "Personne n'echappe a l'omega"
+                jump p2revel
 
         if distance == "oui" :
             if rassurer == "non" :
+                scene black
                 na "Vous vous reveillez"
                 na "[nom_du_persosecondaire] vous regarde"
                 na "Elle vous sourit"
@@ -478,16 +487,94 @@ label start:
                 na "Fin Moyenne"
                 return
 
-
-# Créer a partir d'ici la suite du jeu
-# Retour dans les BCKRMS pour essayer de comprendre ce qui se passe
-# Nouveau personnage a sauver
-# Fin definitive avec destruction des backrooms de 42 ou echec des personnages principaux
-
-label p2-revel :
-   na "Non c'est pas la fin"
-   na "C'est juste le debut"
-    na ""
-    na "3 mois plus tard"
-    na "Cela fait 3 mois que vous avez quité les backrooms"
+    label p2revel :
+    scene black
+    na "Vous vous reveillez"
+    na "Cela fait 3 mois que vous avez quitté les backrooms"
+    na "[nom_du_persosecondaire] dort de l'autre coté du lit"
+    na "Cela fait aussi 3 mois que vous etes ensemble"
+    scene 2cb
+    na "vous sortez de votre maison"
+    na "vous avez loué un airbnb pour passer un peu de temps ensemble"
+    na "vous entendez des pas derrirer vous"
+    na "vous vous retournez"
+    I "Hello [nom_du_perso]"
+    pp "Hello [nom_du_persosecondaire]"
+    na "vous vous embrassez"
+    I "Je ne t'ai pas entendu sortir"
+    pp "Je ne voulais pas te déranger"
+    I "C'est gentil, je vais faire du café tu en veux ?"
+    pp "Oui, si on ne revit pas ce qu'il c'est passé"
+    na "Ines repart en direction de la cuisine"
+    na "Vous restez un moment a l'exterieur"
+    na "Vous n'osez pas lui parler"
+    na "De vos cauchemards"
+    na "De vos peurs"
+    na "Depuis que vous etes sorti des backrooms"
+    na "Vous avez peur"
+    na "Vous avez l'impression d'etre suivi"
+    na "Vous avez l'impression d'etre observé"
+    na "Vous avez d'ailleurs pris cet airbnb pour vous isoler"
+    na "Et pour savoir si quelqu'un vous suivait bel et bien"
+    scene black
+    na "vous rentrez a l'interieur"
+    na "vous prenez par terre une pochette que vous portez toujours avec vous"
+    pp "Je vais courrir a l'exterieur"
+    I "Ok, je fait des pancakes en attendant"
+    na "vous sortez de l'airbnb"
+    scene 2cb
+    na "Vous ouvrez la pochette"
+    na "Vous y trouvez un couteau, et un glock 17 flambant neuf"
+    na "Un cadeau d'un ami proche de vous"
+    na "vous commencez a courrir"
+    image 2cour
+    na "Vous courrez"
+    na "Vous courrez"
+    na "Vous vous retrouvez vite avec une belle vue sur le paysage"
+    na "Vous le remarquez soudain"
+    na "le 4x4 qui vous a suivi depuis le début"
+    na "il est la"
+    na "vous sortez le glock"
+    na "vous pouvez vous approcher du vehicule ou vous pouvez vous enfuir"
+    menu :
+        "Approcher":
+            jump c2approche
+        "Enfuir":
+            jump c2fuite
     
+    label c2approche :
+    scene black
+    na "Vous vous approchez du vehicule"
+    na "il y a un homme a l'interieur"
+    na "vous vous approchez de plus en plus"
+
+    menu:
+        "Tirer":
+            jump c2tire
+        "Ne pas tirer":
+            jump c2pasTire
+    
+    label c2tire :
+    scene black
+    na "Vous tirez 3 cartouches dans le vehicule"
+    na "l'homme a l'interieur est mort"
+    na "vous vous approchez"
+    na "Vous voyez du sang et des morceaux de chair"
+    na "vous vous approchez encore, et commencez a fouiller l'honme"
+    na "Il porte une carte de visite"
+    na "Omega Team, Contractor"
+    na "Vous vous retournez"
+    na "Vous voyez un homme qui vous regarde"
+    na "Il vous sourit"
+    H "Bonjour [nom_du_perso]"
+    H "Je suis le chef de l'Omega Team"
+    H "Vous n'auriez pas dû vous echapper des backrooms"
+    H "Vous n'auriez pas dû vous echapper de la mort"
+    na "l'homme sort sort son arme"
+    
+    
+
+    label c2fuite :
+    na "Vous vous enfuyez"
+    na "Vous repartez dans la direction de l'airbnb"
+

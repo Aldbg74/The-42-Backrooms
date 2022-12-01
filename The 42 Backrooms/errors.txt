@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 26: expected statement.
-    else: 
-        ^
+File "game/script.rpy", line 469: end of line expected.
+    jump p2-revel
+           ^
+
+File "game/script.rpy", line 481: expected ':' not found.
+    label p2-revel :
+            ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Nov 30 18:10:39 2022
+Thu Dec  1 18:34:56 2022
