@@ -320,10 +320,12 @@ label start:
     label laisser :
     na "Vous laissez [nom_du_persosecondaire] dans son coin"
     na "Vous finissez par tomber sur une grande piece"
-
-    #A FINIR LA JE SAIS PAS TROP QUOI METTRE
-
-
+    na "Vous n'avez pas remarqué que [nom_du_persosecondaire] vous avait quitté"
+    na "Vous vous retrouvez seul"
+    na "Vous vous retrouvez seul dans cette piece"
+    na "et les murs de la piece se referment sur vous"
+    na "Vous etes mort"
+    return
 
     label marcher :
     na "Vous continuez a marcher"
@@ -464,7 +466,7 @@ label start:
                 na "This is just the begining"
                 H "Hurlement strident"
                 na "Sauvegarde Chacal"
-                return
+                jump p2-revel
 
         if distance == "oui" :
             if rassurer == "non" :
@@ -481,3 +483,11 @@ label start:
 # Retour dans les BCKRMS pour essayer de comprendre ce qui se passe
 # Nouveau personnage a sauver
 # Fin definitive avec destruction des backrooms de 42 ou echec des personnages principaux
+
+label p2-revel :
+   na "Non c'est pas la fin"
+   na "C'est juste le debut"
+    na ""
+    na "3 mois plus tard"
+    na "Cela fait 3 mois que vous avez quité les backrooms"
+    
