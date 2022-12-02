@@ -684,3 +684,5 @@ label start:
         na "Vous mettez la clef dans le contact"
         na "Vous mettez le contact"
         return
+
+    label 2attack:
