@@ -571,8 +571,22 @@ label start:
     H "Vous n'auriez pas dû vous echapper des backrooms"
     H "Vous n'auriez pas dû vous echapper de la mort"
     na "l'homme sort sort son arme"
-    
-    
+    na "il tire"
+    scene black
+    na "vous tombez"
+    na ""
+    na "1 mois plus tard"
+    scene white
+    na "Un jeu sur les backrooms qui part autant en couille"
+    na "il avait fumé quoi le dev ?"
+    na ""
+    na "Vous ouvrez les yeux, vous ne voyez qu'un halo blanc"
+    I "[nom_du_perso] ? Reste avec moi s'il te plait"
+    I "Je t'aime, je pourrais pas vivre sans toi"
+    scene black
+    na "2 mois plus tard"
+    na "[nom_du_persosecondaire], vous regarde sur votre lit d'hospital"
+    na "Cela fait 3 mois que vous êtes dans le coma"
 
     label c2fuite :
     na "Vous vous enfuyez"
