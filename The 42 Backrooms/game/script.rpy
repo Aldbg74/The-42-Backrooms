@@ -668,4 +668,19 @@ label start:
         na "Vous avez tout rassemblé sur se groupe"
         na "Vous avez désormais une grande responsabilité"
         na "Vous pouvez laisser la vie continuer, et prendre le risque de mourir"
-        na "Ou aller chercher ces fils de pute chez"
+        na "Ou aller chercher ces fils de pute chez eux et les mettre hors d'état de nuite"
+        menu :
+            "Les attaquer"
+                jump 2attack
+            "On laisse tomber"
+                jump 2giveup
+    label 2giveup:
+        na "vous avez decidé de laisser tomber"
+        na "vous vivez votre meilleure vie avec [nom_du_persosecondaire]"
+        na "Un jour vous prenez tout les deux la voiture pour aller au repas de présentation a sa famille"
+        na "Vous avez le trac"
+        pp "Tu est bien installé on peut y aller ?"
+        I "On peut y aller, mes parents sont cool tu vera, il devrait bien t'aimer"
+        na "Vous mettez la clef dans le contact"
+        na "Vous mettez le contact"
+        return
