@@ -587,6 +587,24 @@ label start:
     na "2 mois plus tard"
     na "[nom_du_persosecondaire], vous regarde sur votre lit d'hospital"
     na "Cela fait 3 mois que vous êtes dans le coma"
+    I "Je ne peux pas m'imaginer vivre sans toi"
+    I "Tu est la personne la plus importante dans ma vie"
+    na "[nom_du_persosecondaire] s'approche de vos levres et vous embrasse"
+    scene white
+    na "Vous ouvrez les yeux"
+    I "[nom_du_perso] !!"
+    scene black
+    na "Vous montez difficilement vos bras pour la prendre dans les bras"
+    pp "Tu m'as manqué"
+    I "Ne me fait plus jamais cela"
+    I "La police doit d'interoger"
+    I "Tu t'est pris une balle"
+    I "Qu'est ce qu'il c'est passé ?"
+    na "Vous passez 1h a essayer de lui expliquer ce qu'il en est"
+    I "Pourquoi tu ne m'en as pas parlé ?"
+    pp "Je ne voulais pas t'inquéter;"
+
+
 
     label c2fuite :
     na "Vous vous enfuyez"
