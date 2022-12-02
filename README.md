@@ -11,5 +11,6 @@ Un exemple de visual novel relavivement connu est "Doki Doki Literature Club"
 Vous étes étuant dans une école d'informatique a Lyon, la nuit est longue, le code est dur. Et malheureusement pour vous vous allez <br>
 vous retrouver dans les backrooms de 42. A vous de trouver une issue, et qui sait ? Peut etre pourrez vous trouver l'amour dans les backrooms ?
 
-
+<h1>Disclaimer</h1>
+Peut contenir du contenu pour adulte
  
