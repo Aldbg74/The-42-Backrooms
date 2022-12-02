@@ -660,6 +660,12 @@ label start:
         H "Elimination classique ou les backroom v2 ?"
         H "On y reflechit, rester joignable"
 
-        na "lyon"
-        
-
+        na "Lyon"
+        na "Vous avez depuis longtemps fait des recherches"
+        na "Depuis votre sortie d'hospital sur Omega"
+        na "Une société paramilitaire employé par les gouvernements les plus puissants"
+        na "et accesoirement chargé du mauvais job pour la cia"
+        na "Vous avez tout rassemblé sur se groupe"
+        na "Vous avez désormais une grande responsabilité"
+        na "Vous pouvez laisser la vie continuer, et prendre le risque de mourir"
+        na "Ou aller chercher ces fils de pute chez"
