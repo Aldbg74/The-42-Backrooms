@@ -660,3 +660,6 @@ label start:
         H "Elimination classique ou les backroom v2 ?"
         H "On y reflechit, rester joignable"
 
+        na "lyon"
+        
+
