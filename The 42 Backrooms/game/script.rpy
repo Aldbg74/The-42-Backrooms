@@ -554,6 +554,14 @@ label start:
         "Ne pas tirer":
             jump c2pasTire
     
+    label c2fuite :
+    na "Vous vous enfuyez"
+    na "Vous repartez dans la direction de l'airbnb"
+    na "Un coup de feu se fait entendre"
+    na "vous tombez a terre"
+    na "mort"
+    return
+    
     label c2tire :
     scene black
     na "Vous tirez 3 cartouches dans le vehicule"
@@ -587,6 +595,7 @@ label start:
     na "2 mois plus tard"
     na "[nom_du_persosecondaire], vous regarde sur votre lit d'hospital"
     na "Cela fait 3 mois que vous êtes dans le coma"
+    I "Reveille toi s'il te plait"
     I "Je ne peux pas m'imaginer vivre sans toi"
     I "Tu est la personne la plus importante dans ma vie"
     na "[nom_du_persosecondaire] s'approche de vos levres et vous embrasse"
@@ -602,11 +611,52 @@ label start:
     I "Qu'est ce qu'il c'est passé ?"
     na "Vous passez 1h a essayer de lui expliquer ce qu'il en est"
     I "Pourquoi tu ne m'en as pas parlé ?"
-    pp "Je ne voulais pas t'inquéter;"
+    pp "Je ne voulais pas t'inquéter"
+    I "Je suis enervé contre toi la"
+    na "[nom_du_persosecondaire], a effectivement l'air extrémement decu"
+    pp "Tu est la seule fille qui ma jamais aimé, avec ce que l'on as vécu, je ne voulais pqs t'inquéter"
+    I "ok, je vais voir les docteur leur dire que t'est debout"
+    na "[nom_du_persosecondaire] sort de la chambre"
+    na "Votre sac a dos est a coté de vous, vous essqyer de l'atteindre"
+    na "Vous arriver a l'attraper, et en fouillaint, vous retrouver l'écrain"
+    na "Vous l'ouvrez la boule au ventre"
+    na "la bague est toujours la"
+    na "Vous auriez du faire votre demande pendant vos vacances"
+    na "Au meme moment [nom_du_persosecondaire] rentre dans la chambre"
+    I "C'est quoi cette bague ? elle est pour qui ?"
+    menu:
+        "Que dois-je faire ?"
+        "Lui faire ma demande"
+            jump 2demande
+        "Ne rien dire"
+            jump 2riendire
 
-
-
-    label c2fuite :
-    na "Vous vous enfuyez"
-    na "Vous repartez dans la direction de l'airbnb"
+    label 2riendire:
+        na "Vous decidew de ne rien dire"
+        na "Mais cela fait tellement de temps que vous attendez"
+        jump 2demande
+    
+    label 2demande:
+        I "Alors c'est quoi cette bague ?"
+        pp "[nom_du_persosecondaire] ?"
+        I "Oui ?"
+        pp "Est ce que tu veux partager ta vie avec moi ?"
+        na "Un leger blanc se fait sentir"
+        I "Tu me demande en mariage ?"
+        pp "Oui"
+        na "[nom_du_persosecondaire] vous saute au coup"
+        I "Oui, oui OUI !!"
+        I "Je t'aime bordel je veux passer ma vie avec toi"
+        na "Vous passez plusieurs minutes a vous embrasser"
+        jump 2suite
+    
+    label 2suite:
+        na "lieu inconnu"
+        H "Monsieur, il c'est reveillé, l'autre est toujours en vie"
+        H "Nous devons les éliminer vous etes au courant"
+        H "Le projets backroom est historiquement un projet de la NSA pour torturer des prisoniers"
+        H "Le projet est devenu hors de controle, et des personnes sont comme tombé a l'interieur"
+        H "Beaucoup sont mort, il ne doivent pas pouvoir témoigner"
+        H "Elimination classique ou les backroom v2 ?"
+        H "On y reflechit, rester joignable"
 
