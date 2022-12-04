@@ -674,6 +674,14 @@ label start:
                 jump 2attack
             "On laisse tomber"
                 jump 2giveup
+    label 2attack:
+        na "Votre décision est prise"
+        na "Ces personnes sont trop dangereuses"
+        na "Et vous menaceront vous et [nom_du_persosecondaire] jusqu'a la fin de votre vie"
+        na "Vous ne pouvez pqs les laisser faire"
+
+
+
     label 2giveup:
         na "vous avez decidé de laisser tomber"
         na "vous vivez votre meilleure vie avec [nom_du_persosecondaire]"
