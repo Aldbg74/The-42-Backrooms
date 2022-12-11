@@ -13,4 +13,5 @@ vous retrouver dans les backrooms de 42. A vous de trouver une issue, et qui sai
 
 <h1>Disclaimer</h1>
 Peut contenir du contenu pour adulte
+C'est aussi un gros bordel actuellement niveau histoire
  
