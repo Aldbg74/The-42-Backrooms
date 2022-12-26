@@ -29,6 +29,7 @@ define pp = Character("[nom_du_perso]", color="ffc8c8")
 define na = Character('Narator', color="#ffc8c8")
 define H = Character('???', color="#FF0000")
 define I = Character( "[nom_du_persosecondaire]", color="#00FF00")
+define CG = Character('SGT Gilbert', color="#01F")
 
 
 # Le jeu commence ici
@@ -701,4 +702,6 @@ label start:
     label flashback:
         na "Pays inconnu, 22h"
         na "Il y a de nombreuse années"
+        CG "Arrivée sur site dans 4 minutes"
+        CG "Soyez pret a sauter, on a pas de secondes chances"
         
