@@ -694,3 +694,9 @@ label start:
         return
 
     label 2attack:
+
+        scene black
+        na "L'histoire est bien parti en couille hein ?"
+        na "Bref reprenons"
+
+        
