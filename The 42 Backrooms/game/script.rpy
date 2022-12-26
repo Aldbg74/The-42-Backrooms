@@ -664,7 +664,7 @@ label start:
         na "Vous avez depuis longtemps fait des recherches"
         na "Depuis votre sortie d'hospital sur Omega"
         na "Une société paramilitaire employé par les gouvernements les plus puissants"
-        na "et accesoirement chargé du mauvais job pour la cia"
+        na "et accesoirement chargé du mauvais job pour les services secrets de plusieurs pays"
         na "Vous avez tout rassemblé sur se groupe"
         na "Vous avez désormais une grande responsabilité"
         na "Vous pouvez laisser la vie continuer, et prendre le risque de mourir"
@@ -678,7 +678,9 @@ label start:
         na "Votre décision est prise"
         na "Ces personnes sont trop dangereuses"
         na "Et vous menaceront vous et [nom_du_persosecondaire] jusqu'a la fin de votre vie"
-        na "Vous ne pouvez pqs les laisser faire"
+        na "Vous ne pouvez pas les laisser faire"
+        na "Vous etes dans votre sous sol"
+        # Faudrait trouver la photo d'une cave
 
 
 
@@ -692,11 +694,3 @@ label start:
         na "Vous mettez la clef dans le contact"
         na "Vous mettez le contact"
         return
-
-    label 2attack:
-
-        scene black
-        na "L'histoire est bien parti en couille hein ?"
-        na "Bref reprenons"
-
-        
