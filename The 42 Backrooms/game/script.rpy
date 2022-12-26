@@ -681,6 +681,9 @@ label start:
         na "Vous ne pouvez pas les laisser faire"
         na "Vous etes dans votre sous sol"
         # Faudrait trouver la photo d'une cave
+        na "Vous avez appelé de vielles relations"
+        jump flashback
+    
 
 
 
@@ -694,3 +697,8 @@ label start:
         na "Vous mettez la clef dans le contact"
         na "Vous mettez le contact"
         return
+
+    label flashback:
+        na "Pays inconnu, 22h"
+        na "Il y a de nombreuse années"
+        

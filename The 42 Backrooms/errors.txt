@@ -2,13 +2,33 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 469: end of line expected.
-    jump p2-revel
-           ^
+File "game/script.rpy", line 530: expected '=' not found.
+    image 2cour
+               ^
 
-File "game/script.rpy", line 481: expected ':' not found.
-    label p2-revel :
-            ^
+File "game/script.rpy", line 629: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Lui faire ma demande"
+                          ^
+
+File "game/script.rpy", line 634: expected 'label_name_declare' not found.
+    label 2riendire:
+         ^
+
+File "game/script.rpy", line 639: expected 'label_name_declare' not found.
+    label 2demande:
+         ^
+
+File "game/script.rpy", line 653: expected 'label_name_declare' not found.
+    label 2suite:
+         ^
+
+File "game/script.rpy", line 677: expected 'label_name_declare' not found.
+    label 2attack:
+         ^
+
+File "game/script.rpy", line 687: expected 'label_name_declare' not found.
+    label 2giveup:
+         ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Thu Dec  1 18:34:56 2022
+Mon Dec 26 14:14:10 2022
